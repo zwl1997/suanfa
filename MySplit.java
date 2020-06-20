@@ -18,16 +18,16 @@ public class MySplit {
         List<String> list = new ArrayList<>();
 
         int i = 0;
-        while (i <= str.length()){
+        while (true){
             str = str.substring(i, str.length());
-            if(str.indexOf('&') == -1){
+            i = str.indexOf('&');
+            if(i == -1){
                 list.add(str);
+                break;
             }else {
-                i = str.indexOf('&');
                 String s = str.substring(0, i);
                 i = i + 2;
                 list.add(s);
-//                list.add(str);
             }
         }
         return list;
